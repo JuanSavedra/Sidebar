@@ -25,6 +25,7 @@ aside {
   height: 100%;
   width: 6rem;
   background-color: var(--green);
+  transition: width 0.5s;
 }
 
 aside ul li {
