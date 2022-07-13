@@ -13,6 +13,7 @@ html {
 }
 
 body {
+  display: flex;
   background-color: var(--body-bg-color);
 }
 
@@ -43,4 +44,12 @@ aside div {
   padding: 1rem;
   width: 100%;
   background-color: var(--light-green);
+}
+
+main h1 {
+  font-size: 1.5625rem;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-top: 1rem;
+  margin-left: 1rem;
 }
