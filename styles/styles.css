@@ -19,6 +19,7 @@ body {
 aside {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-direction: column;
   height: 100%;
   width: 6rem;
@@ -26,11 +27,20 @@ aside {
 }
 
 aside ul li {
-  margin: 1rem;
+  margin: 0.5rem;
+  padding: 0.8rem;
 }
 
 aside ul .search {
-  padding: 0.1rem;
   border-radius: 6px;
   background-color: var(--light-grey);
+}
+
+aside div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  background-color: var(--light-green);
 }
