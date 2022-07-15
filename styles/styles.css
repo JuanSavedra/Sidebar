@@ -28,21 +28,33 @@ aside {
   transition: width 0.5s;
 }
 
-aside ul li {
-  margin: 0.5rem;
-  padding: 0.8rem;
+aside #ListElements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
 }
 
-aside ul .search {
+aside #ListElements div {
+  margin: 0 1rem;
+}
+
+aside #ListElements div:first-child {
+  margin-top: 1rem;
+}
+
+/* aside #ListElements #Search {
   border-radius: 6px;
   background-color: var(--light-grey);
-}
+  padding: 0.7rem 0.7rem 0.3rem 0.7rem;
+} */
 
-aside div {
+aside #Logout {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 0;
   width: 100%;
   background-color: var(--light-green);
 }

@@ -1,12 +1,13 @@
 const sidebar = document.querySelector("aside");
+const listElements = document.querySelector("#ListElements");
 sidebar.style.width = "6rem";
 
 function openSidebar() {
   if (sidebar.style.width === "6rem") {
-    sidebar.style.alignItems = "flex-start";
+    listElements.style.alignItems = "flex-start";
     sidebar.style.width = "12rem";
   } else {
-    sidebar.style.alignItems = "center";
+    listElements.style.alignItems = "center";
     sidebar.style.width = "6rem";
   }
 }
