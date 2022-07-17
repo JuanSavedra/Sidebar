@@ -3,13 +3,7 @@ const listElements = document.querySelector("#ListElements");
 const elementsToInsert = document.querySelectorAll(".element");
 
 let createdElements = [
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-  ""
+  "", "", "", "", "", "", ""
 ];
 
 let isCreated = false;
@@ -36,9 +30,9 @@ function openSidebar() {
   menuIsOpen = !menuIsOpen;
 }
 
-function createSidebarElements(type, name, src) {
+function createSidebarElements(type, content, src) {
   let element = document.createElement(type);
-  element.textContent = name;
+  element.textContent = content;
 
   if (type === 'img') {
     element.src = src; 
@@ -49,13 +43,13 @@ function createSidebarElements(type, name, src) {
 
 function insertElements() {
   let menuElements = [
-    {type: "img", name: "", src: "../img/logo.svg"},
-    {type: "span", name: "Buscar", src: ""},
-    {type: "span", name: "Dashboard", src: ""},
-    {type: "span", name: "Pets", src: ""},
-    {type: "span", name: "Clientes", src: ""},
-    {type: "span", name: "Veterinários", src: ""},
-    {type: "span", name: "Ajustes", src: ""}
+    {type: "img", content: "", src: "../img/logo.svg"},
+    {type: "span", content: "Buscar", src: ""},
+    {type: "span", content: "Dashboard", src: ""},
+    {type: "span", content: "Pets", src: ""},
+    {type: "span", content: "Clientes", src: ""},
+    {type: "span", content: "Veterinários", src: ""},
+    {type: "span", content: "Ajustes", src: ""}
   ]
 
   for (let i = 0; i < elementsToInsert.length; i++) {
@@ -63,7 +57,7 @@ function insertElements() {
     elementsToInsert[i]
     .appendChild(
       createSidebarElements(
-        menuElements[i].type, menuElements[i].name, menuElements[i].src
+        menuElements[i].type, menuElements[i].content, menuElements[i].src
       )
     );
   }
