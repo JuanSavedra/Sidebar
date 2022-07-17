@@ -1,31 +1,28 @@
 const sidebar = document.querySelector("aside");
 const listElements = document.querySelector("#ListElements");
-const _logo = document.createElement("img");
-const _search = document.createElement("span");
-const _grid = document.createElement("span");
-const _pet = document.createElement("span");
-const _client = document.createElement("span");
-const _vet = document.createElement("span");
-const _settings = document.createElement("span");
-const menu = document.querySelector("#Menu");
-const search = document.querySelector("#Search");
-const grid = document.querySelector("#Grid");
-const pet = document.querySelector("#Pet");
-const client = document.querySelector("#User");
-const vet = document.querySelector("#Vet");
-const settings = document.querySelector("#Settings");
+const elementsToInsert = document.querySelectorAll(".element");
 
-sidebar.style.width = "6rem";
+let createdElements = [
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  ""
+];
+
 let isCreated = false;
+let menuIsOpen = false;
 
 function openSidebar() {
-  if (sidebar.style.width === "6rem") {
+  if (!menuIsOpen) {
     listElements.style.alignItems = "flex-start";
-    menu.style.justifyContent = "space-between";
+    elementsToInsert[0].style.justifyContent = "space-between";
     sidebar.style.width = "12rem";
   } else {
     listElements.style.alignItems = "center";
-    menu.style.justifyContent = "center";
+    elementsToInsert[0].style.justifyContent = "center";
     sidebar.style.width = "6rem";
   }
 
@@ -36,32 +33,44 @@ function openSidebar() {
   }
 
   isCreated = !isCreated;
+  menuIsOpen = !menuIsOpen;
+}
+
+function createSidebarElements(type, name, src) {
+  let element = document.createElement(type);
+  element.textContent = name;
+
+  if (type === 'img') {
+    element.src = src; 
+  }
+
+  return element;
 }
 
 function insertElements() {
-  _logo.src = "../img/logo.svg";
-  _search.textContent = "Buscar";
-  _grid.textContent = "Dashboard";
-  _pet.textContent = "Pets";
-  _client.textContent = "Clientes";
-  _vet.textContent = "Veterinários";
-  _settings.textContent = "Ajustes";
+  let menuElements = [
+    {type: "img", name: "", src: "../img/logo.svg"},
+    {type: "span", name: "Buscar", src: ""},
+    {type: "span", name: "Dashboard", src: ""},
+    {type: "span", name: "Pets", src: ""},
+    {type: "span", name: "Clientes", src: ""},
+    {type: "span", name: "Veterinários", src: ""},
+    {type: "span", name: "Ajustes", src: ""}
+  ]
 
-  menu.appendChild(_logo);
-  search.appendChild(_search);
-  grid.appendChild(_grid);
-  pet.appendChild(_pet);
-  client.appendChild(_client);
-  vet.appendChild(_vet);
-  settings.appendChild(_settings);
+  for (let i = 0; i < elementsToInsert.length; i++) {
+    createdElements[i] = 
+    elementsToInsert[i]
+    .appendChild(
+      createSidebarElements(
+        menuElements[i].type, menuElements[i].name, menuElements[i].src
+      )
+    );
+  }
 }
 
 function removeElements() {
-  _logo.parentNode.removeChild(_logo);
-  _search.parentNode.removeChild(_search);
-  _grid.parentNode.removeChild(_grid);
-  _pet.parentNode.removeChild(_pet);
-  _client.parentNode.removeChild(_client);
-  _vet.parentNode.removeChild(_vet);
-  _settings.parentNode.removeChild(_settings);
+  for (let i = 0; i < elementsToInsert.length; i++) {
+    createdElements[i].parentNode.removeChild(createdElements[i]);
+  }
 }
