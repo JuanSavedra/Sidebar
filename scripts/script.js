@@ -1,9 +1,10 @@
+const menu = document.querySelector("#Menu");
 const sidebar = document.querySelector("aside");
 const listElements = document.querySelector("#ListElements");
 const elementsToInsert = document.querySelectorAll(".element");
-let createdElements = [];
 let menuIsOpen = false;
 let enableToPush = true;
+let createdElements = [];
 
 let menuElements = [
   {type: "img", content: null, src: "../img/logo.svg"},
@@ -15,20 +16,16 @@ let menuElements = [
   {type: "span", content: "Ajustes", src: null}
 ]
 
-function openSidebar() {
+function controlSidebar() {
   if (!menuIsOpen) {
     listElements.style.alignItems = "flex-start";
-    elementsToInsert[0].style.justifyContent = "space-between";
+    menu.style.justifyContent = "space-between";
     sidebar.style.width = "12rem";
-  } else {
-    listElements.style.alignItems = "center";
-    elementsToInsert[0].style.justifyContent = "center";
-    sidebar.style.width = "6rem";
-  }
-
-  if (!menuIsOpen) {
     insertElements();
   } else {
+    listElements.style.alignItems = "center";
+    menu.style.justifyContent = "center";
+    sidebar.style.width = "6rem";
     removeElements();
   }
 
