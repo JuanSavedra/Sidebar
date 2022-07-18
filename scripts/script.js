@@ -6,13 +6,13 @@ let menuIsOpen = false;
 let enableToPush = true;
 
 let menuElements = [
-  {type: "img", content: "", src: "../img/logo.svg"},
-  {type: "span", content: "Buscar", src: ""},
-  {type: "span", content: "Dashboard", src: ""},
-  {type: "span", content: "Pets", src: ""},
-  {type: "span", content: "Clientes", src: ""},
-  {type: "span", content: "Veterinários", src: ""},
-  {type: "span", content: "Ajustes", src: ""}
+  {type: "img", content: null, src: "../img/logo.svg"},
+  {type: "span", content: "Buscar", src: null},
+  {type: "span", content: "Dashboard", src: null},
+  {type: "span", content: "Pets", src: null},
+  {type: "span", content: "Clientes", src: null},
+  {type: "span", content: "Veterinários", src: null},
+  {type: "span", content: "Ajustes", src: null}
 ]
 
 function openSidebar() {
